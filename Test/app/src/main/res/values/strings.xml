@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Test</string>
+    <string name="Txt1">Добро пожаловать!</string>
+    <string name="btn_back">Назад</string>
+    <string name="btn_continue">Далее</string>
+    <string name="btn1">Button</string>
+    <string name="btn2">Начать</string>
+    <string name="btn3">Начать</string>
+    <string name="txt2">/10</string>
+    <string name="txt4">TextView</string>
+    <string name="txt5">Правильных ответов:</string>
+</resources>
