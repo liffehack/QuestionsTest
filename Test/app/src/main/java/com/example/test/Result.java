@@ -13,10 +13,16 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
+// Для результата создадим новое активити
 public class Result extends AppCompatActivity {
 
+    // Текущий результат
     TextView txt;
+
+    // История
     TextView txt2;
+
+    // Поделиться
     Button btn;
 
 
@@ -47,6 +53,7 @@ public class Result extends AppCompatActivity {
         }
     }
 
+    // Метод при запуске акттивити
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     boolean press=false;
     String YourName ="";
 
-
+    // Чтение файла
     protected void ReadFile() throws IOException {
         Resources resources = getResources();
         InputStream is=resources.openRawResource(R.raw.data);
@@ -60,6 +60,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             count++;
         }
     }
+
+    // Запись результатов в файл
     void WriteFileSD() {
         // проверяем доступность SD
         if (!Environment.getExternalStorageState().equals(
@@ -86,10 +88,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-
+    // Переход к след. вопросу
     void QuestionsRefresh()
     {
-
+        // Далее следует логика перехода вопросов
         if(NumberList<=10) { myTextView.setText(question[NumberList - 1].getVopros());
             Num.setText("Вопрос:" + NumberList+" /10");
             prav.setText("Правильных ответов: " + VernOtv);
@@ -107,6 +109,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    // Метод обновления бара
     void ProgressBarRefresh()
     {
         mCountDownTimer=new CountDownTimer(10000,500) {
@@ -138,6 +141,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mCountDownTimer.start();
     }
 
+    // Инициализация
     protected void Init()
     {
         Intent intent = getIntent();
@@ -154,14 +158,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button2 = (Button)findViewById(R.id.button6);
         button3 = (Button)findViewById(R.id.button2);
         button4 = (Button)findViewById(R.id.button1);
+
         pr1=(ProgressBar) findViewById(R.id.progressBar2) ;
-        myTextView = (TextView) findViewById(R.id.txt1);//Вопрос
-        Num = (TextView) findViewById(R.id.textView3);//Номер теста
-        prav=(TextView)findViewById(R.id.textView);//Кол-во  правильного ответа
+        myTextView = (TextView) findViewById(R.id.txt1); //Вопрос
+        Num = (TextView) findViewById(R.id.textView3); //Номер теста
+        prav=(TextView)findViewById(R.id.textView); //Кол-во  правильного ответа
+
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
         button3.setOnClickListener(this);
         button4.setOnClickListener(this);
+
         myTextView.setText(question[NumberList - 1].getVopros());
         button1.setText(question[NumberList - 1].getAnswerA());
         button2.setText(question[NumberList - 1].getAnswerB());
@@ -222,6 +229,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    // Открытие нового активити
     void openActivity()
     {
         Intent intent = new Intent(MainActivity.this, Result.class);
