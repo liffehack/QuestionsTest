@@ -22,18 +22,18 @@ import java.io.InputStreamReader;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Question[] question = new Question[10];
-    Button button1,button2,button3,button4,button5,button6;
-    TextView myTextView;
-    TextView Num;
-    TextView prav;
-    int NumberList=1;
-    int VernOtv=0;
-    int i=0;
+    Question[] question = new Question[10]; // Массив вопросов
+    Button button1,button2,button3,button4,button5,button6; // Необходимые кнопки
+    TextView myTextView;    // Текст вопроса
+    TextView Num;           // Номер страницы
+    TextView prav;          // Верный ответ
+    int NumberList=1;       // Номер страницы (только int)
+    int VernOtv=0;          // Кол-во верных ответов
+    int i=0;                // Для счётчика
     ProgressBar pr1;
-    CountDownTimer mCountDownTimer;
-    boolean press=false;
-    String YourName ="";
+    CountDownTimer mCountDownTimer; // Таймер для бара
+    boolean press=false;            // бул для бара
+    String YourName ="";            // Имя пользователя
 
     // Чтение файла
     protected void ReadFile() throws IOException {
